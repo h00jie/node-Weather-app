@@ -7,6 +7,8 @@ const log = console.log
 
 const app = express()
 
+const port = 5000;
+
 // Define paths for Express config
 const publicDirPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -101,9 +103,6 @@ app.get('*', (req, res) => {
 
 })
 
-
-
-app.listen(3000, () => {
-    log('Server is up and running')
-
+app.listen(port,  () => {
+    console.log('Server is up and running, listening on port 5000!')
 })
