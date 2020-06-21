@@ -46,11 +46,6 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
-    var ip = (req.headers['x-forwarded-for'] || '').split(',').pop().trim() || 
-         req.connection.remoteAddress || 
-         req.socket.remoteAddress || 
-         req.connection.socket.remoteAddress
-    console.log(ip)
     const { address } =  req.query
     if ( !address ) {
         return res.json({
