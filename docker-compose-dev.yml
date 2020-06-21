@@ -2,12 +2,12 @@ version: '3'
 
 volumes:
   node_modules:
-
+  
 services:
   nodejs:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile-dev
     # image: nodejs
     container_name: nodejs
     restart: unless-stopped
