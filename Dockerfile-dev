@@ -1,7 +1,8 @@
 FROM node
 WORKDIR /app
 COPY package.json /app
+RUN npm install -g nodemon
 RUN npm install
 COPY . /app
-CMD node ./src/app.js
+CMD nodemon ./src/app.js -e js,hbs
 EXPOSE 5000

@@ -50,7 +50,12 @@ app.get('/weather', (req, res) => {
          req.connection.remoteAddress || 
          req.socket.remoteAddress || 
          req.connection.socket.remoteAddress
-    console.log(ip)
+    console.log( ip )
+    // console.log(req)
+    dns.reverse(req.connection.remoteAddress, function(err, domains) {
+        console.log(domains);
+    });
+
     const { address } =  req.query
     if ( !address ) {
         return res.json({
