@@ -1,13 +1,15 @@
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
+const moment = require('moment')
+
 const geoCode = require('./utils/geoCode')
 const foreCast = require('./utils/foreCast')
-const log = console.log
+const { env } = require('process')
 
 const app = express()
 
-const port = 5000;
+const port = process.env.PORT || 5000
 
 // Define paths for Express config
 const publicDirPath = path.join(__dirname, '../public')
@@ -50,11 +52,6 @@ app.get('/weather', (req, res) => {
          req.connection.remoteAddress || 
          req.socket.remoteAddress || 
          req.connection.socket.remoteAddress
-    console.log( ip )
-    // console.log(req)
-    dns.reverse(req.connection.remoteAddress, function(err, domains) {
-        console.log(domains);
-    });
 
     const { address } =  req.query
     if ( !address ) {
@@ -108,6 +105,6 @@ app.get('*', (req, res) => {
 
 })
 
-app.listen(port,  () => {
+app.listen(port, () => {
     console.log('Server is up and running, listening on port 5000!')
 })

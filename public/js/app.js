@@ -38,7 +38,7 @@ weatherForm.addEventListener('submit', (e) => {
 
     const locationInput = searchInput.value
 
-    fetch(window.location+'weather?address='+locationInput).then((response) => {
+    fetch('/weather?address='+locationInput).then((response) => {
         response.json().then((data) => {
 
             elementMapper(data)
