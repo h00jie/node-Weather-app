@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Me',
-        imageName:'sea.jpeg',
+        imageName:'me.jpeg',
         name: 'h00jie'
     })
 })
