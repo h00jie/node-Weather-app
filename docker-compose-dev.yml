@@ -9,7 +9,7 @@ services:
       context: .
       dockerfile: Dockerfile-dev
     # image: nodejs
-    container_name: nodejs
+    container_name: nodejs-dev
     restart: unless-stopped
     ports:
       - 5000:5000

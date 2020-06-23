@@ -9,7 +9,7 @@ const { env } = require('process')
 
 const app = express()
 
-const port = process.env.PORT
+const port = process.env.PORT || 5000
 
 // Define paths for Express config
 const publicDirPath = path.join(__dirname, '../public')
